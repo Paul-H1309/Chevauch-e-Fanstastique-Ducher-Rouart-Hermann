@@ -52,6 +52,12 @@ public class interface_plateau extends javax.swing.JFrame {
         jPanel23 = new javax.swing.JPanel();
         jPanel24 = new javax.swing.JPanel();
         jPanel25 = new javax.swing.JPanel();
+        Bt_droite = new javax.swing.JButton();
+        Bt_haut = new javax.swing.JButton();
+        Bt_gauche = new javax.swing.JButton();
+        Bt_bas = new javax.swing.JButton();
+        Bt_selec = new javax.swing.JButton();
+        Bt_recommencer = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -431,8 +437,38 @@ public class interface_plateau extends javax.swing.JFrame {
 
         getContentPane().add(jPanel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 50, 50));
 
-        pack();
-    }// </editor-fold>//GEN-END:initComponents
+        Bt_droite.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        Bt_droite.setText(">");
+        getContentPane().add(Bt_droite, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 120, 40, 40));
+
+        Bt_haut.setText("/\\");
+            Bt_haut.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    Bt_hautActionPerformed(evt);
+                }
+            });
+            getContentPane().add(Bt_haut, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 70, 40, 40));
+
+            Bt_gauche.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+            Bt_gauche.setText("<");
+            getContentPane().add(Bt_gauche, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 120, 40, 40));
+
+            Bt_bas.setText("\\/");
+            getContentPane().add(Bt_bas, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 170, 40, 40));
+
+            Bt_selec.setFont(new java.awt.Font("Segoe UI", 0, 7)); // NOI18N
+            Bt_selec.setText("OK");
+            getContentPane().add(Bt_selec, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 120, 40, 40));
+
+            Bt_recommencer.setText("RECOMMENCER");
+            getContentPane().add(Bt_recommencer, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, -1, -1));
+
+            pack();
+        }// </editor-fold>//GEN-END:initComponents
+
+    private void Bt_hautActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bt_hautActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Bt_hautActionPerformed
 
     /**
      * @param args the command line arguments
@@ -460,6 +496,12 @@ public class interface_plateau extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Bt_bas;
+    private javax.swing.JButton Bt_droite;
+    private javax.swing.JButton Bt_gauche;
+    private javax.swing.JButton Bt_haut;
+    private javax.swing.JButton Bt_recommencer;
+    private javax.swing.JButton Bt_selec;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
