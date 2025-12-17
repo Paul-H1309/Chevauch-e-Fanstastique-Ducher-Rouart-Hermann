@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
-/**
+/**paint component
  *
  * @author paulh
  */
@@ -11,10 +11,11 @@ public class Cellule {
 private boolean allumee;
 private boolean chevalPresent;
 
-public Cellule(boolean allumee){
-    this.allumee=allumee;
+public Cellule(){
+    this.allumee=true;
     this.chevalPresent= false;
 }
+
  public boolean entrer() {
         if (!allumee) {
             return false;
