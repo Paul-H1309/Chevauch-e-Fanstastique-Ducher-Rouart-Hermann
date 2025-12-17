@@ -18,6 +18,10 @@ public class interface_plateau extends javax.swing.JFrame {
         initComponents();
         
         jPanel1.setLayout(new java.awt.GridLayout(5,5));
+        
+        for (int i=0; i < 5; i++){
+            for (int j=0;j)
+        }
     }
 
     /**
