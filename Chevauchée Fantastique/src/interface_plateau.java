@@ -11,11 +11,19 @@ public class interface_plateau extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(interface_plateau.class.getName());
 
+    boolean F=true;
+    boolean M=false;
+    boolean D=false;
+    
     /**
      * Creates new form interface_plateau
      */
     public interface_plateau() {
         initComponents();
+        
+        Bt_facile.setBorder(null);
+        Bt_moyen.setBorder(null);
+        Bt_difficile.setBorder(null);
         
         jPanel1.setLayout(new java.awt.GridLayout(5,5));
         
@@ -37,12 +45,18 @@ public class interface_plateau extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jCheckBox1 = new javax.swing.JCheckBox();
+        jCheckBox2 = new javax.swing.JCheckBox();
         jPanel1 = new javax.swing.JPanel();
         Bt_recommencer = new javax.swing.JButton();
-        Rd_facile = new javax.swing.JRadioButton();
-        Rd_moyen = new javax.swing.JRadioButton();
-        Rd_difficile = new javax.swing.JRadioButton();
         Lb_resultat = new javax.swing.JLabel();
+        Bt_difficile = new javax.swing.JButton();
+        Bt_moyen = new javax.swing.JButton();
+        Bt_facile = new javax.swing.JButton();
+
+        jCheckBox1.setText("jCheckBox1");
+
+        jCheckBox2.setText("jCheckBox2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -53,60 +67,74 @@ public class interface_plateau extends javax.swing.JFrame {
 
         Bt_recommencer.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Bt_recommencer.setText("RECOMMENCER");
-        Bt_recommencer.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0), 3));
+        Bt_recommencer.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 3));
         getContentPane().add(Bt_recommencer, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, 110, 20));
-
-        Rd_facile.setBackground(new java.awt.Color(51, 204, 0));
-        Rd_facile.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        Rd_facile.setText("FACILE");
-        Rd_facile.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 204, 0), 2));
-        Rd_facile.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Rd_facileActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Rd_facile, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 70, -1));
-
-        Rd_moyen.setBackground(new java.awt.Color(255, 204, 0));
-        Rd_moyen.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        Rd_moyen.setText("MOYEN");
-        Rd_moyen.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Rd_moyenActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Rd_moyen, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, -1, -1));
-
-        Rd_difficile.setBackground(new java.awt.Color(204, 0, 0));
-        Rd_difficile.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        Rd_difficile.setText("DIFFICILE");
-        Rd_difficile.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Rd_difficileActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Rd_difficile, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 270, -1, -1));
 
         Lb_resultat.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Lb_resultat.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Lb_resultat.setText("0");
-        Lb_resultat.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0), 3));
+        Lb_resultat.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 51, 255), 3));
         getContentPane().add(Lb_resultat, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, 100, 30));
+
+        Bt_difficile.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        Bt_difficile.setForeground(new java.awt.Color(204, 0, 0));
+        Bt_difficile.setText("DIFFICILE");
+        Bt_difficile.setBorder(null);
+        Bt_difficile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Bt_difficileActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Bt_difficile, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 266, 70, 20));
+
+        Bt_moyen.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        Bt_moyen.setForeground(new java.awt.Color(255, 204, 0));
+        Bt_moyen.setText("MOYEN");
+        Bt_moyen.setBorder(null);
+        Bt_moyen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Bt_moyenActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Bt_moyen, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 266, 80, 20));
+
+        Bt_facile.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        Bt_facile.setForeground(new java.awt.Color(51, 204, 0));
+        Bt_facile.setText("FACILE");
+        Bt_facile.setBorder(null);
+        Bt_facile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Bt_facileActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Bt_facile, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 266, 80, 20));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Rd_moyenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Rd_moyenActionPerformed
+    private void Bt_moyenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bt_moyenActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Rd_moyenActionPerformed
+        
+        Bt_moyen.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 0), 3));
+        Bt_difficile.setBorder(null);
+        Bt_facile.setBorder(null);
+    }//GEN-LAST:event_Bt_moyenActionPerformed
 
-    private void Rd_difficileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Rd_difficileActionPerformed
+    private void Bt_facileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bt_facileActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Rd_difficileActionPerformed
+        
+        Bt_facile.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 204, 0), 3));
+        Bt_moyen.setBorder(null);
+        Bt_difficile.setBorder(null);
+    }//GEN-LAST:event_Bt_facileActionPerformed
 
-    private void Rd_facileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Rd_facileActionPerformed
+    private void Bt_difficileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bt_difficileActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Rd_facileActionPerformed
+        
+        Bt_difficile.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 0, 0), 3));
+        Bt_moyen.setBorder(null);
+        Bt_facile.setBorder(null);
+    }//GEN-LAST:event_Bt_difficileActionPerformed
 
     /**
      * @param args the command line arguments
@@ -134,11 +162,13 @@ public class interface_plateau extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Bt_difficile;
+    private javax.swing.JButton Bt_facile;
+    private javax.swing.JButton Bt_moyen;
     private javax.swing.JButton Bt_recommencer;
     private javax.swing.JLabel Lb_resultat;
-    private javax.swing.JRadioButton Rd_difficile;
-    private javax.swing.JRadioButton Rd_facile;
-    private javax.swing.JRadioButton Rd_moyen;
+    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
