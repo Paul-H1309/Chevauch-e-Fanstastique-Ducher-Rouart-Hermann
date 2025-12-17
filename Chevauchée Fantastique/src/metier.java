@@ -16,8 +16,11 @@ Cellule[][] grille;
             grille[i][j]=new Cellule();  
         }
     }
-}}
+    initalisation();
+   }
 
-grille[3][2]=grille.estallumee(true);
+private void initalisation(){
+    grille[2][2].allumer();  
+}
 
-
+}
