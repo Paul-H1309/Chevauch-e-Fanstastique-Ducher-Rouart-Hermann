@@ -91,7 +91,7 @@ public class interface_plateau extends javax.swing.JFrame {
                 Bt_difficileActionPerformed(evt);
             }
         });
-        getContentPane().add(Bt_difficile, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 266, 70, 20));
+        getContentPane().add(Bt_difficile, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 266, 80, 20));
 
         Bt_moyen.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Bt_moyen.setForeground(new java.awt.Color(255, 204, 0));
