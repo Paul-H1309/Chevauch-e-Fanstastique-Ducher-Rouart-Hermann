@@ -14,6 +14,7 @@ public class interface_plateau extends javax.swing.JFrame {
     boolean F=true;
     boolean M=false;
     boolean D=false;
+    int score=0;
     
     /**
      * Creates new form interface_plateau
@@ -68,6 +69,11 @@ public class interface_plateau extends javax.swing.JFrame {
         Bt_recommencer.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Bt_recommencer.setText("RECOMMENCER");
         Bt_recommencer.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 3));
+        Bt_recommencer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Bt_recommencerActionPerformed(evt);
+            }
+        });
         getContentPane().add(Bt_recommencer, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, 110, 20));
 
         Lb_resultat.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -135,6 +141,16 @@ public class interface_plateau extends javax.swing.JFrame {
         Bt_moyen.setBorder(null);
         Bt_facile.setBorder(null);
     }//GEN-LAST:event_Bt_difficileActionPerformed
+
+    private void Bt_recommencerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bt_recommencerActionPerformed
+        // TODO add your handling code here:
+        
+        score=0;
+        Lb_resultat.setText(""+score);
+        Bt_difficile.setBorder(null);
+        Bt_moyen.setBorder(null);
+        Bt_facile.setBorder(null);
+    }//GEN-LAST:event_Bt_recommencerActionPerformed
 
     /**
      * @param args the command line arguments
