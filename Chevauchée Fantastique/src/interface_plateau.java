@@ -38,11 +38,6 @@ public class interface_plateau extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        Bt_droite = new javax.swing.JButton();
-        Bt_haut = new javax.swing.JButton();
-        Bt_gauche = new javax.swing.JButton();
-        Bt_bas = new javax.swing.JButton();
-        Bt_selec = new javax.swing.JButton();
         Bt_recommencer = new javax.swing.JButton();
         Rd_facile = new javax.swing.JRadioButton();
         Rd_moyen = new javax.swing.JRadioButton();
@@ -54,84 +49,52 @@ public class interface_plateau extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jPanel1.setLayout(new java.awt.GridLayout());
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 230, 230));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, 200, 200));
 
-        Bt_droite.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        Bt_droite.setText(">");
-        Bt_droite.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 255, 51), 3));
-        getContentPane().add(Bt_droite, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 120, 40, 40));
+        Bt_recommencer.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        Bt_recommencer.setText("RECOMMENCER");
+        Bt_recommencer.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0), 3));
+        getContentPane().add(Bt_recommencer, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, 110, 20));
 
-        Bt_haut.setText("/\\");
-            Bt_haut.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 255, 51), 3));
-            Bt_haut.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    Bt_hautActionPerformed(evt);
-                }
-            });
-            getContentPane().add(Bt_haut, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 70, 40, 40));
+        Rd_facile.setBackground(new java.awt.Color(51, 204, 0));
+        Rd_facile.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        Rd_facile.setText("FACILE");
+        Rd_facile.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 204, 0), 2));
+        Rd_facile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Rd_facileActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Rd_facile, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 70, -1));
 
-            Bt_gauche.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-            Bt_gauche.setText("<");
-            Bt_gauche.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 255, 51), 3));
-            getContentPane().add(Bt_gauche, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 120, 40, 40));
+        Rd_moyen.setBackground(new java.awt.Color(255, 204, 0));
+        Rd_moyen.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        Rd_moyen.setText("MOYEN");
+        Rd_moyen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Rd_moyenActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Rd_moyen, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, -1, -1));
 
-            Bt_bas.setText("\\/");
-            Bt_bas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 255, 51), 3));
-            getContentPane().add(Bt_bas, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 170, 40, 40));
+        Rd_difficile.setBackground(new java.awt.Color(204, 0, 0));
+        Rd_difficile.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        Rd_difficile.setText("DIFFICILE");
+        Rd_difficile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Rd_difficileActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Rd_difficile, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 270, -1, -1));
 
-            Bt_selec.setFont(new java.awt.Font("Segoe UI", 1, 7)); // NOI18N
-            Bt_selec.setText("OK");
-            Bt_selec.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 255, 51), 3));
-            getContentPane().add(Bt_selec, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 120, 40, 40));
+        Lb_resultat.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        Lb_resultat.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Lb_resultat.setText("0");
+        Lb_resultat.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0), 3));
+        getContentPane().add(Lb_resultat, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, 100, 30));
 
-            Bt_recommencer.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-            Bt_recommencer.setText("RECOMMENCER");
-            Bt_recommencer.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0), 3));
-            getContentPane().add(Bt_recommencer, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 230, 100, 20));
-
-            Rd_facile.setBackground(new java.awt.Color(51, 204, 0));
-            Rd_facile.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-            Rd_facile.setText("FACILE");
-            Rd_facile.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 204, 0), 2));
-            Rd_facile.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    Rd_facileActionPerformed(evt);
-                }
-            });
-            getContentPane().add(Rd_facile, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 70, -1));
-
-            Rd_moyen.setBackground(new java.awt.Color(255, 204, 0));
-            Rd_moyen.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-            Rd_moyen.setText("MOYEN");
-            Rd_moyen.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    Rd_moyenActionPerformed(evt);
-                }
-            });
-            getContentPane().add(Rd_moyen, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, -1, -1));
-
-            Rd_difficile.setBackground(new java.awt.Color(204, 0, 0));
-            Rd_difficile.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-            Rd_difficile.setText("DIFFICILE");
-            Rd_difficile.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    Rd_difficileActionPerformed(evt);
-                }
-            });
-            getContentPane().add(Rd_difficile, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 270, -1, -1));
-
-            Lb_resultat.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-            Lb_resultat.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-            Lb_resultat.setText("0");
-            Lb_resultat.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0), 3));
-            getContentPane().add(Lb_resultat, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, 100, 30));
-
-            pack();
-        }// </editor-fold>//GEN-END:initComponents
-
-    private void Bt_hautActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bt_hautActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Bt_hautActionPerformed
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
 
     private void Rd_moyenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Rd_moyenActionPerformed
         // TODO add your handling code here:
@@ -171,12 +134,7 @@ public class interface_plateau extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Bt_bas;
-    private javax.swing.JButton Bt_droite;
-    private javax.swing.JButton Bt_gauche;
-    private javax.swing.JButton Bt_haut;
     private javax.swing.JButton Bt_recommencer;
-    private javax.swing.JButton Bt_selec;
     private javax.swing.JLabel Lb_resultat;
     private javax.swing.JRadioButton Rd_difficile;
     private javax.swing.JRadioButton Rd_facile;
