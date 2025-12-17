@@ -32,4 +32,8 @@ public class Cellule {
     public void enleverCheval() {
         chevalPresent = false;
     }
+
+    void retirerCheval() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
