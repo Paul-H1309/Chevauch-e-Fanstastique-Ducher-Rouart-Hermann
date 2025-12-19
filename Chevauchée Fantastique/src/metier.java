@@ -77,20 +77,17 @@ public class metier {
             return false;
         }
 
-        
-        grille[chevalX][chevalY].retirerCheval();
+         if (!grille[xDest][yDest].estAllumee()) {
+        return false;
+    }
+    grille[chevalX][chevalY].retirerCheval();
 
-    
-        chevalX = xDest;
-        chevalY = yDest;
+    chevalX = xDest;
+    chevalY = yDest;
+    grille[chevalX][chevalY].placerCheval();
+    grille[chevalX][chevalY].basculerLumiere();
 
-       
-        grille[chevalX][chevalY].placerCheval();
-
-       
-        grille[chevalX][chevalY].basculerLumiere();
-
-        return true;
+    return true;     
     }
 
     public Cellule[][] getGrille() {
