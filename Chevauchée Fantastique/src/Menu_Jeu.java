@@ -50,7 +50,7 @@ public class Menu_Jeu extends javax.swing.JFrame {
         getContentPane().add(Bt_jouer, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, 80, 30));
 
         Nom_Du_Jeu.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        Nom_Du_Jeu.setForeground(new java.awt.Color(51, 255, 51));
+        Nom_Du_Jeu.setForeground(new java.awt.Color(0, 204, 51));
         Nom_Du_Jeu.setText("LA");
         getContentPane().add(Nom_Du_Jeu, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, 60, 50));
 
