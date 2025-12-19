@@ -1,11 +1,30 @@
+
+import java.util.ArrayList;
+
 public class metier {
 
     int TAILLE = 5;
-    
     private int chevalX;
     private int chevalY;
-
     Cellule[][] grille = new Cellule[TAILLE][TAILLE];
+
+    private int[][][] tours = {
+        {
+            {0,0},{2,1},{4,0},{3,2},{4,4},
+            {2,3},{0,4},{1,2},{0,0},{1,4},
+            {3,3},{4,1},{2,0},{0,1},{1,3},
+            {3,4},{4,2},{3,0},{1,1},{0,2},
+            {2,2},{4,3},{3,1},{1,0},{2,4}
+        },
+        {
+            {2,2},{0,1},{1,3},{0,4},{2,3},
+            {4,4},{3,2},{4,0},{2,1},{0,0},
+            {1,2},{0,4},{1,0},{3,1},{4,3},
+            {2,4},{0,3},{1,1},{3,0},{4,2},
+            {3,4},{1,3},{0,2},{2,0},{4,1}
+        }
+  
+    };
 
     public metier() {
 
@@ -17,13 +36,61 @@ public class metier {
 
         initialisation();
 
-        chevalX = 2;
-        chevalY = 2;
+
+        int[][] tour = choisirTourAleatoire();
+
+
+        int lastIndex = tour.length - 1;
+        chevalX = tour[lastIndex][0];
+        chevalY = tour[lastIndex][1];
         grille[chevalX][chevalY].placerCheval();
     }
 
-  
-  /*
+ 
+    private void initialisation() {
+        for (int i = 0; i < TAILLE; i++) {
+            for (int j = 0; j < TAILLE; j++) {
+                grille[i][j].allumer();
+            }
+        }
+    }
+
+
+    public boolean deplacerCheval(int xDest, int yDest) {
+        if (xDest < 0 || xDest >= TAILLE || yDest < 0 || yDest >= TAILLE) {
+            return false;
+        }
+
+        int dx = Math.abs(xDest - chevalX);
+        int dy = Math.abs(yDest - chevalY);
+
+        if (!((dx == 2 && dy == 1) || (dx == 1 && dy == 2))) {
+            return false;
+        }
+
+        grille[chevalX][chevalY].retirerCheval();
+
+        chevalX = xDest;
+        chevalY = yDest;
+
+        grille[chevalX][chevalY].placerCheval();
+
+       
+        grille[chevalX][chevalY].eteindre();
+
+        return true;
+    }
+
+    public Cellule[][] getGrille() {
+        return grille;
+    }
+
+    public int[][] choisirTourAleatoire() {
+        int index = (int)(Math.random() * tours.length);
+        return tours[index];
+    }
+}
+/*
     public boolean deplacerCheval(int xDest, int yDest) {
 
         if (xDest < 0 || xDest >= TAILLE || yDest < 0 || yDest >= TAILLE) {
@@ -55,45 +122,3 @@ public class metier {
     }
 /*/
    
-    private void initialisation() {       
-    
-    int totalAllume = 15; 
-    int totalEteint = 10;
-    int tailleGrille = TAILLE * TAILLE;
-
-    if (totalAllume + totalEteint > tailleGrille) {
-        throw new IllegalArgumentException("Le nombre total de cellules dépasse la taille de la grille");
-    }
-
-  
-    boolean[] etatCellules = new boolean[tailleGrille];
-
-
-    for (int i = 0; i < totalAllume; i++) {
-        etatCellules[i] = true;
-    }
-
-    for (int i = tailleGrille - 1; i > 0; i--) {
-        int j = (int)(Math.random() * (i + 1));
-        boolean temp = etatCellules[i];
-        etatCellules[i] = etatCellules[j];
-        etatCellules[j] = temp;
-    }
-
-
-    for (int i = 0; i < TAILLE; i++) {
-        for (int j = 0; j < TAILLE; j++) {
-            int index = i * TAILLE + j;
-            if (etatCellules[index]) {
-                grille[i][j].allumer();
-            } else {
-                grille[i][j].eteindre(); 
-            }
-        }
-    }
-    }
-
-    public Cellule[][] getGrille() {
-        return grille;
-    }
-}
