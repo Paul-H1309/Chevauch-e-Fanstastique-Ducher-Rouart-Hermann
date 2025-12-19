@@ -25,14 +25,13 @@ public class interface_plateau extends javax.swing.JFrame {
         Bt_facile.setBorder(null);
         Bt_moyen.setBorder(null);
         Bt_difficile.setBorder(null);
-        Cellule c = new Cellule();
         jPanel1.setLayout(new java.awt.GridLayout(5,5));
-        
         for (int i=0; i < 5; i++){
             for (int j=0;j < 5; j++){
+                Cellule c = new Cellule();
                 JbuttonAmeliore b = new JbuttonAmeliore(i,j,c);
                 jPanel1.add(b);
-               // b.addActionListener(new java.awt.event.actionListener())
+              
             }
         }
     }

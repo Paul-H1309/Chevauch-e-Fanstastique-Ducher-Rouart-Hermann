@@ -1,21 +1,40 @@
-
+import java.awt.Color;
+import java.awt.Graphics;
 import javax.swing.JButton;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-/**
- *
- * @author paulh
- */
 public class JbuttonAmeliore extends JButton {
-    int cooX;
-    int cooY;
-    
-    JbuttonAmeliore(int cooX, int cooY,c) {
-        this.cooX=cooX;
-        this.cooY=cooY;
+
+    private int cooX;
+    private int cooY;
+    private Cellule cellule;
+
+    public JbuttonAmeliore(int cooX, int cooY, Cellule cellule) {
+        this.cooX = cooX;
+        this.cooY = cooY;
+        this.cellule = cellule;
     }
+
+    public int getCooX() {
+        return cooX;
+    }
+
+    public int getCooY() {
+        return cooY;
+    }
+
+    public Cellule getCellule() {
+        return cellule;
+    }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        if (cellule.estAllumee()==true) {
+            setText("true");
+        }
+        else {
+            setText("false");
+        }
+    }
+    
 }

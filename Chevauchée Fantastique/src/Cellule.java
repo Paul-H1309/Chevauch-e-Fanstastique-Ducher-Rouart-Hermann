@@ -4,36 +4,36 @@ public class Cellule {
     private boolean chevalPresent;
 
     public Cellule() {
-        this.allumee = false;
-        this.chevalPresent = false;
+        allumee = false;
+        chevalPresent = false;
     }
-    
+
+    public void allumer() {
+        allumee = true;
+    }
+
+    public void eteindre() {
+        allumee = false;
+    }
+
+    public void basculerLumiere() {
+        allumee = !allumee;
+    }
+
     public boolean estAllumee() {
         return allumee;
+    }
+
+    public void placerCheval() {
+        chevalPresent = true;
+    }
+
+    public void retirerCheval() {
+        chevalPresent = false;
     }
 
     public boolean aCheval() {
         return chevalPresent;
     }
 
-    public void allumer() {
-        allumee=true;
-    }    
-
-    public void eteindre() {
-        allumee = false;
-    }
-
-    
-    public void placerCheval() {
-        chevalPresent = true;
-    }
-
-    public void enleverCheval() {
-        chevalPresent = false;
-    }
-
-    void retirerCheval() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }
