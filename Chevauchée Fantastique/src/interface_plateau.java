@@ -42,6 +42,7 @@ public class interface_plateau extends javax.swing.JFrame {
                     });
         }
       }
+      setVisible(true);
     }
  
     /**
@@ -187,6 +188,8 @@ public class interface_plateau extends javax.swing.JFrame {
         Bt_difficile.setBorder(null);
         Bt_moyen.setBorder(null);
         Bt_facile.setBorder(null);
+         dispose();     
+        new interface_plateau();
     }//GEN-LAST:event_Bt_recommencerActionPerformed
 
     private void Bt_menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bt_menuActionPerformed
