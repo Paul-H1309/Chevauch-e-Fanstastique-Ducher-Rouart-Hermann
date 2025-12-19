@@ -57,6 +57,7 @@ public class metier {
    
     private void initialisation() {
         grille[0][0].allumer();
+        grille[0][1].allumer();
     }
 
     public Cellule[][] getGrille() {
