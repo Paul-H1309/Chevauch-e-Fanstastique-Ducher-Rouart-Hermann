@@ -17,13 +17,13 @@ public class metier {
 
         initialisation();
 
-        chevalX = 2;
-        chevalY = 2;
+        chevalX = (TAILLE%2)+1;
+        chevalY = (TAILLE%2)+1;
         grille[chevalX][chevalY].placerCheval();
     }
 
   
-  /*
+
     public boolean deplacerCheval(int xDest, int yDest) {
 
         if (xDest < 0 || xDest >= TAILLE || yDest < 0 || yDest >= TAILLE) {
@@ -53,7 +53,7 @@ public class metier {
 
         return true;
     }
-/*/
+
    
     private void initialisation() {
         grille[0][0].allumer();

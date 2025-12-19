@@ -5,8 +5,8 @@ import javax.swing.JButton;
 public class JbuttonAmeliore extends JButton {
 
 
-    private int cooX;
-    private int cooY;
+    public int cooX;
+    public int cooY;
     private Cellule cellule;
 
     public JbuttonAmeliore(int cooX, int cooY, Cellule cellule) {
@@ -30,12 +30,17 @@ public class JbuttonAmeliore extends JButton {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
+        if (cellule.aCheval()==true){
+            setText("C");
+        }
+        else {
         if (cellule.estAllumee()==true) {
             setText("1");
         }
         else {
             setText("0");
-        }
+        }}
+        
     }
     
 }

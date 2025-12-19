@@ -15,7 +15,6 @@ public class interface_plateau extends javax.swing.JFrame {
     boolean M=false;
     boolean D=false;
     int score=0;
-    
     /**
      * Creates new form interface_plateau
      */
@@ -30,10 +29,14 @@ public class interface_plateau extends javax.swing.JFrame {
             Cellule c = jeu.grille[i][j];
             JbuttonAmeliore b = new JbuttonAmeliore(i,j,c); 
             jPanel1.add(b);
+            b.addActionListener(new java.awt.event.ActionListener(){
+            public void actionPerformed(java.awt.event.ActionEvent evt){
+                jeu.deplacerCheval(b.cooX,b.cooY);}
+                    });
         }
       }
     }
-
+ 
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
