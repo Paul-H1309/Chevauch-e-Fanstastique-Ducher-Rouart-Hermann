@@ -14,7 +14,7 @@ public class interface_plateau extends javax.swing.JFrame {
     boolean F=true;
     boolean M=false;
     boolean D=false;
-    int score=0;
+    String score;
     /**
      * Creates new form interface_plateau
      */
@@ -170,7 +170,7 @@ public class interface_plateau extends javax.swing.JFrame {
     private void Bt_recommencerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bt_recommencerActionPerformed
         // TODO add your handling code here:
         
-        score=0;
+        score="";
         Lb_resultat.setText(""+score);
         Bt_difficile.setBorder(null);
         Bt_moyen.setBorder(null);
