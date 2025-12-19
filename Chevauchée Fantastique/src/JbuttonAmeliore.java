@@ -36,28 +36,28 @@ imageCheval = icon.getImage();
         return cellule;
     }
 
-    @Override
-    protected void paintComponent(Graphics g) {
-    super.paintComponent(g);
-
-    // Dessin du fond selon l'état de la cellule
-    if (cellule.estAllumee()) {
+@Override
+protected void paintComponent(Graphics g) {
+    // fond selon état
+    if (cellule.aCheval()) {
+        g.setColor(new java.awt.Color(102, 102, 102)); // gris pour le cheval
+    } else if (cellule.estAllumee()) {
         g.setColor(new java.awt.Color(255, 255, 102)); // jaune
     } else {
-        g.setColor(new java.awt.Color(102, 102, 102)); // gris
+        g.setColor(new java.awt.Color(102, 102, 102)); // gris éteint
     }
     g.fillRect(0, 0, getWidth(), getHeight());
 
-    // Dessin du cavalier
+    // image du cheval
     if (cellule.aCheval() && imageCheval != null) {
-        g.drawImage(
-            imageCheval,
-            0, 0,
-            getWidth(), getHeight(),
-            this
-        );
+        g.drawImage(imageCheval, 0, 0, getWidth(), getHeight(), this);
     }
-}}
+
+    // bordure
+    g.setColor(java.awt.Color.BLACK);
+    g.drawRect(0, 0, getWidth()-1, getHeight()-1);
+}
+}
 
     
 
