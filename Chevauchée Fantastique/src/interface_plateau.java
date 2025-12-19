@@ -89,7 +89,6 @@ public class interface_plateau extends javax.swing.JFrame {
 
         Lb_resultat.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Lb_resultat.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Lb_resultat.setText("0");
         Lb_resultat.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 51, 255), 3));
         getContentPane().add(Lb_resultat, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 20, 100, 30));
 
