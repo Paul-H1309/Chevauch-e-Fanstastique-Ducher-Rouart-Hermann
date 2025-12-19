@@ -32,6 +32,9 @@ public class Menu_Jeu extends javax.swing.JFrame {
         Bt_quitter = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -44,12 +47,12 @@ public class Menu_Jeu extends javax.swing.JFrame {
                 Bt_jouerActionPerformed(evt);
             }
         });
-        getContentPane().add(Bt_jouer, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 80, 30));
+        getContentPane().add(Bt_jouer, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, 80, 30));
 
         Nom_Du_Jeu.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         Nom_Du_Jeu.setForeground(new java.awt.Color(51, 255, 51));
         Nom_Du_Jeu.setText("LA");
-        getContentPane().add(Nom_Du_Jeu, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 60, 50));
+        getContentPane().add(Nom_Du_Jeu, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, 60, 50));
 
         Bt_quitter.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Bt_quitter.setText("QUITTER");
@@ -59,17 +62,24 @@ public class Menu_Jeu extends javax.swing.JFrame {
                 Bt_quitterActionPerformed(evt);
             }
         });
-        getContentPane().add(Bt_quitter, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 250, 80, 30));
+        getContentPane().add(Bt_quitter, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 300, 80, 30));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 102, 255));
         jLabel1.setText("CHEVAUCH2E");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 320, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 320, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(204, 0, 204));
         jLabel2.setText("FANTASTIQUE");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, -1, -1));
+
+        jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 255, 204), 3));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 460, 370));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 400));
+
+        jLabel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 204, 0), 3));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 440, 350));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -116,5 +126,8 @@ public class Menu_Jeu extends javax.swing.JFrame {
     private javax.swing.JLabel Nom_Du_Jeu;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     // End of variables declaration//GEN-END:variables
 }
