@@ -31,10 +31,10 @@ public class JbuttonAmeliore extends JButton {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         if (cellule.estAllumee()==true) {
-            setText("1");
+            setBackground(new java.awt.Color(255, 255, 102));
         }
         else {
-            setText("0");
+            setBackground(new java.awt.Color(102, 102, 102));
         }
     }
     
