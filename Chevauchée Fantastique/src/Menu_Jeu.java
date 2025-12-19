@@ -38,6 +38,7 @@ public class Menu_Jeu extends javax.swing.JFrame {
 
         Bt_jouer.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Bt_jouer.setText("JOUER");
+        Bt_jouer.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 3));
         Bt_jouer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Bt_jouerActionPerformed(evt);
@@ -52,6 +53,7 @@ public class Menu_Jeu extends javax.swing.JFrame {
 
         Bt_quitter.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Bt_quitter.setText("QUITTER");
+        Bt_quitter.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 3));
         Bt_quitter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Bt_quitterActionPerformed(evt);
