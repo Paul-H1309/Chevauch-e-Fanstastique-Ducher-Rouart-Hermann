@@ -35,10 +35,12 @@ public class JbuttonAmeliore extends JButton {
         }
         else {
         if (cellule.estAllumee()==true) {
+            setText("");
             setBackground(new java.awt.Color(255, 255, 102));
         }
         else {
             setBackground(new java.awt.Color(102, 102, 102));
+            setText("");
         }
 
         }}}

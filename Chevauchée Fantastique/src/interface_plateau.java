@@ -31,7 +31,8 @@ public class interface_plateau extends javax.swing.JFrame {
             jPanel1.add(b);
             b.addActionListener(new java.awt.event.ActionListener(){
             public void actionPerformed(java.awt.event.ActionEvent evt){
-                jeu.deplacerCheval(b.cooX,b.cooY);}
+                jeu.deplacerCheval(b.cooX,b.cooY);
+                repaint();}
                     });
         }
       }
