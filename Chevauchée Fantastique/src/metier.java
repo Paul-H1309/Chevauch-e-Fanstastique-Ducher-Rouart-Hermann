@@ -48,7 +48,7 @@ public class metier {
         }
 
 
-        int nbEteintes = 5; 
+        int nbEteintes = 7; 
         for (int k = 0; k < nbEteintes; k++) {
             int index = (int)(Math.random() * (TAILLE * TAILLE / 2));
             int x = tour[index][0];
