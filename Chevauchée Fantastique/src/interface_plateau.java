@@ -57,6 +57,7 @@ public class interface_plateau extends javax.swing.JFrame {
         jCheckBox1 = new javax.swing.JCheckBox();
         jCheckBox2 = new javax.swing.JCheckBox();
         jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         Bt_recommencer = new javax.swing.JButton();
         Lb_resultat = new javax.swing.JLabel();
@@ -64,7 +65,6 @@ public class interface_plateau extends javax.swing.JFrame {
         Bt_moyen = new javax.swing.JButton();
         Bt_facile = new javax.swing.JButton();
         Bt_menu = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
@@ -73,6 +73,8 @@ public class interface_plateau extends javax.swing.JFrame {
         jCheckBox2.setText("jCheckBox2");
 
         jLabel2.setText("jLabel2");
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/st_small_507x507-pad_600x600_f8f8f8.jpeg"))); // NOI18N
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -144,9 +146,7 @@ public class interface_plateau extends javax.swing.JFrame {
         });
         getContentPane().add(Bt_menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 560, 110, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/st_small_507x507-pad_600x600_f8f8f8.jpeg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 600));
-
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/st_small_507x507-pad_600x600_f8f8f8-removebg-preview.png"))); // NOI18N
         jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 255, 153), 3));
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 570, 570));
 

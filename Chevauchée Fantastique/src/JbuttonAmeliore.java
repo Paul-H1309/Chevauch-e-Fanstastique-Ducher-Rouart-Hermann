@@ -16,7 +16,7 @@ private Image imageCheval;
         this.cellule = cellule;
          try {
             ImageIcon icon = new ImageIcon(
-    getClass().getResource("/images/st_small_507x507-pad_600x600_f8f8f8.jpeg")
+    getClass().getResource("/images/st_small_507x507-pad_600x600_f8f8f8-removebg-preview.png")
 );
 imageCheval = icon.getImage();
         } catch (Exception e) {
