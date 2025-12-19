@@ -1,8 +1,9 @@
-import java.awt.Color;
+
 import java.awt.Graphics;
 import javax.swing.JButton;
 
 public class JbuttonAmeliore extends JButton {
+
 
     private int cooX;
     private int cooY;
@@ -11,8 +12,8 @@ public class JbuttonAmeliore extends JButton {
     public JbuttonAmeliore(int cooX, int cooY, Cellule cellule) {
         this.cooX = cooX;
         this.cooY = cooY;
-        this.cellule = cellule;
-    }
+        this.cellule = cellule;}
+
 
     public int getCooX() {
         return cooX;
@@ -30,10 +31,10 @@ public class JbuttonAmeliore extends JButton {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         if (cellule.estAllumee()==true) {
-            setText("true");
+            setText("T");
         }
         else {
-            setText("false");
+            setText("F");
         }
     }
     
