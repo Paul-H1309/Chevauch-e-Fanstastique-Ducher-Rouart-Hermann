@@ -54,6 +54,7 @@ public class interface_plateau extends javax.swing.JFrame {
         Bt_difficile = new javax.swing.JButton();
         Bt_moyen = new javax.swing.JButton();
         Bt_facile = new javax.swing.JButton();
+        Bt_menu = new javax.swing.JButton();
 
         jCheckBox1.setText("jCheckBox1");
 
@@ -115,6 +116,16 @@ public class interface_plateau extends javax.swing.JFrame {
         });
         getContentPane().add(Bt_facile, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 266, 80, 20));
 
+        Bt_menu.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        Bt_menu.setText("MENU");
+        Bt_menu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 3));
+        Bt_menu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Bt_menuActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Bt_menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 330, 70, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -152,6 +163,12 @@ public class interface_plateau extends javax.swing.JFrame {
         Bt_facile.setBorder(null);
     }//GEN-LAST:event_Bt_recommencerActionPerformed
 
+    private void Bt_menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bt_menuActionPerformed
+        // TODO add your handling code here:
+        Menu_Jeu f = new Menu_Jeu(); 
+        f.setVisible(true) ; 
+    }//GEN-LAST:event_Bt_menuActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -180,6 +197,7 @@ public class interface_plateau extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Bt_difficile;
     private javax.swing.JButton Bt_facile;
+    private javax.swing.JButton Bt_menu;
     private javax.swing.JButton Bt_moyen;
     private javax.swing.JButton Bt_recommencer;
     private javax.swing.JLabel Lb_resultat;
