@@ -66,7 +66,7 @@ public class Menu_Jeu extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 102, 255));
-        jLabel1.setText("CHEVAUCH2E");
+        jLabel1.setText("CHEVAUCHEE");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 320, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
