@@ -1,3 +1,6 @@
+
+import java.util.ArrayList;
+
 public class metier {
 
     int TAILLE = 5;
@@ -55,43 +58,56 @@ public class metier {
     }
 /*/
    
-    private void initialisation() {       
-    
-    int totalAllume = 15; 
-    int totalEteint = 10;
-    int tailleGrille = TAILLE * TAILLE;
+    private void initialisation() {
+    boolean[][] visite = new boolean[TAILLE][TAILLE];
+    int[][] parcours = new int[TAILLE * TAILLE][2];
 
-    if (totalAllume + totalEteint > tailleGrille) {
-        throw new IllegalArgumentException("Le nombre total de cellules dépasse la taille de la grille");
-    }
+    int xFin = (int)(Math.random() * TAILLE);
+    int yFin = (int)(Math.random() * TAILLE);
 
-  
-    boolean[] etatCellules = new boolean[tailleGrille];
+    parcours[0][0] = xFin;
+    parcours[0][1] = yFin;
+    visite[xFin][yFin] = true;
 
-
-    for (int i = 0; i < totalAllume; i++) {
-        etatCellules[i] = true;
-    }
-
-    for (int i = tailleGrille - 1; i > 0; i--) {
-        int j = (int)(Math.random() * (i + 1));
-        boolean temp = etatCellules[i];
-        etatCellules[i] = etatCellules[j];
-        etatCellules[j] = temp;
+    for (int i = 1; i < TAILLE * TAILLE; i++) {
+        int[] voisins = getVoisinsNonVisites(parcours[i-1][0], parcours[i-1][1], visite);
+        if (voisins == null) {
+            i = 0;
+            visite = new boolean[TAILLE][TAILLE];
+            parcours[0][0] = xFin;
+            parcours[0][1] = yFin;
+            visite[xFin][yFin] = true;
+        } else {
+            parcours[i][0] = voisins[0];
+            parcours[i][1] = voisins[1];
+            visite[voisins[0]][voisins[1]] = true;
+        }
     }
 
 
     for (int i = 0; i < TAILLE; i++) {
         for (int j = 0; j < TAILLE; j++) {
-            int index = i * TAILLE + j;
-            if (etatCellules[index]) {
-                grille[i][j].allumer();
-            } else {
-                grille[i][j].eteindre(); 
-            }
+            grille[i][j].allumer();
         }
     }
+    chevalX = parcours[TAILLE*TAILLE - 1][0];
+    chevalY = parcours[TAILLE*TAILLE - 1][1];
+    grille[chevalX][chevalY].placerCheval();
+}
+
+private int[] getVoisinsNonVisites(int x, int y, boolean[][] visite) {
+    int[][] moves = {{2,1},{1,2},{-1,2},{-2,1},{-2,-1},{-1,-2},{1,-2},{2,-1}};
+    ArrayList<int[]> candidats = new ArrayList<>();
+    for (int[] m : moves) {
+        int nx = x + m[0];
+        int ny = y + m[1];
+        if (nx >= 0 && nx < TAILLE && ny >= 0 && ny < TAILLE && !visite[nx][ny]) {
+            candidats.add(new int[]{nx, ny});
+        }
     }
+    if (candidats.isEmpty()) return null;
+    return candidats.get((int)(Math.random() * candidats.size()));
+}
 
     public Cellule[][] getGrille() {
         return grille;
