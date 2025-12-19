@@ -72,6 +72,11 @@ public class interface_plateau extends javax.swing.JFrame {
         Bt_recommencer.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Bt_recommencer.setText("RECOMMENCER");
         Bt_recommencer.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 3));
+        Bt_recommencer.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Bt_recommencerMouseClicked(evt);
+            }
+        });
         Bt_recommencer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Bt_recommencerActionPerformed(evt);
@@ -175,6 +180,10 @@ public class interface_plateau extends javax.swing.JFrame {
         f.setVisible(true) ; 
         this.dispose();
     }//GEN-LAST:event_Bt_menuActionPerformed
+
+    private void Bt_recommencerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Bt_recommencerMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Bt_recommencerMouseClicked
 
     /**
      * @param args the command line arguments
