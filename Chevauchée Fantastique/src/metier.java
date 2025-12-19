@@ -1,7 +1,7 @@
 public class metier {
 
     int TAILLE = 5;
-
+    
     private int chevalX;
     private int chevalY;
 
@@ -55,8 +55,42 @@ public class metier {
     }
 /*/
    
-    private void initialisation() {
-        grille[0][0].allumer();
+    private void initialisation() {       
+    
+    int totalAllume = 15; 
+    int totalEteint = 10;
+    int tailleGrille = TAILLE * TAILLE;
+
+    if (totalAllume + totalEteint > tailleGrille) {
+        throw new IllegalArgumentException("Le nombre total de cellules dépasse la taille de la grille");
+    }
+
+  
+    boolean[] etatCellules = new boolean[tailleGrille];
+
+
+    for (int i = 0; i < totalAllume; i++) {
+        etatCellules[i] = true;
+    }
+
+    for (int i = tailleGrille - 1; i > 0; i--) {
+        int j = (int)(Math.random() * (i + 1));
+        boolean temp = etatCellules[i];
+        etatCellules[i] = etatCellules[j];
+        etatCellules[j] = temp;
+    }
+
+
+    for (int i = 0; i < TAILLE; i++) {
+        for (int j = 0; j < TAILLE; j++) {
+            int index = i * TAILLE + j;
+            if (etatCellules[index]) {
+                grille[i][j].allumer();
+            } else {
+                grille[i][j].eteindre(); 
+            }
+        }
+    }
     }
 
     public Cellule[][] getGrille() {
