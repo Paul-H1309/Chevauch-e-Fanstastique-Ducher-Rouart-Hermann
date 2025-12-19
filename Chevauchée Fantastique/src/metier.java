@@ -9,7 +9,6 @@ public class metier {
 
     Cellule[][] grille = new Cellule[TAILLE][TAILLE];
 
-    // Variantes de Knight's Tour 5x5
     private int[][][] tours = {
         {
             {0,0},{2,1},{4,0},{3,2},{4,4},
@@ -31,14 +30,13 @@ public class metier {
    
     public metier() {
 
-        // Initialiser la grille
+
         for (int i = 0; i < TAILLE; i++) {
             for (int j = 0; j < TAILLE; j++) {
                 grille[i][j] = new Cellule();
             }
         }
 
-        // Initialisation du plateau avec cases aléatoirement éteintes
         initialisation();
     }
 
