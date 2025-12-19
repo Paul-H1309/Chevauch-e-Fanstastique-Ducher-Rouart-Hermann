@@ -34,8 +34,6 @@ public class metier {
                 grille[i][j] = new Cellule();
             }
         }
-
-        // Initialisation du plateau avec cases aléatoirement éteintes
         initialisation();
     }
 
