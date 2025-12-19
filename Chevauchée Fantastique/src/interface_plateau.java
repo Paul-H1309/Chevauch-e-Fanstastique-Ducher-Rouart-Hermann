@@ -47,6 +47,7 @@ public class interface_plateau extends javax.swing.JFrame {
 
         jCheckBox1 = new javax.swing.JCheckBox();
         jCheckBox2 = new javax.swing.JCheckBox();
+        jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         Bt_recommencer = new javax.swing.JButton();
         Lb_resultat = new javax.swing.JLabel();
@@ -54,17 +55,21 @@ public class interface_plateau extends javax.swing.JFrame {
         Bt_moyen = new javax.swing.JButton();
         Bt_facile = new javax.swing.JButton();
         Bt_menu = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         jCheckBox1.setText("jCheckBox1");
 
         jCheckBox2.setText("jCheckBox2");
 
+        jLabel2.setText("jLabel2");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jPanel1.setLayout(new java.awt.GridLayout());
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, 200, 200));
+        jPanel1.setLayout(new java.awt.GridLayout(1, 0));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 490, 450));
 
         Bt_recommencer.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Bt_recommencer.setText("RECOMMENCER");
@@ -74,13 +79,13 @@ public class interface_plateau extends javax.swing.JFrame {
                 Bt_recommencerActionPerformed(evt);
             }
         });
-        getContentPane().add(Bt_recommencer, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, 110, 20));
+        getContentPane().add(Bt_recommencer, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 560, 110, 20));
 
         Lb_resultat.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Lb_resultat.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Lb_resultat.setText("0");
         Lb_resultat.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 51, 255), 3));
-        getContentPane().add(Lb_resultat, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, 100, 30));
+        getContentPane().add(Lb_resultat, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 20, 100, 30));
 
         Bt_difficile.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Bt_difficile.setForeground(new java.awt.Color(204, 0, 0));
@@ -91,7 +96,7 @@ public class interface_plateau extends javax.swing.JFrame {
                 Bt_difficileActionPerformed(evt);
             }
         });
-        getContentPane().add(Bt_difficile, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 266, 80, 20));
+        getContentPane().add(Bt_difficile, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 530, 80, 20));
 
         Bt_moyen.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Bt_moyen.setForeground(new java.awt.Color(255, 204, 0));
@@ -102,7 +107,7 @@ public class interface_plateau extends javax.swing.JFrame {
                 Bt_moyenActionPerformed(evt);
             }
         });
-        getContentPane().add(Bt_moyen, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 266, 80, 20));
+        getContentPane().add(Bt_moyen, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 530, 80, 20));
 
         Bt_facile.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Bt_facile.setForeground(new java.awt.Color(51, 204, 0));
@@ -113,7 +118,7 @@ public class interface_plateau extends javax.swing.JFrame {
                 Bt_facileActionPerformed(evt);
             }
         });
-        getContentPane().add(Bt_facile, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 266, 80, 20));
+        getContentPane().add(Bt_facile, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 530, 80, 20));
 
         Bt_menu.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Bt_menu.setText("MENU");
@@ -123,7 +128,11 @@ public class interface_plateau extends javax.swing.JFrame {
                 Bt_menuActionPerformed(evt);
             }
         });
-        getContentPane().add(Bt_menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 330, 70, -1));
+        getContentPane().add(Bt_menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 560, 110, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 600));
+
+        jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 255, 153), 3));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 570, 570));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -202,6 +211,9 @@ public class interface_plateau extends javax.swing.JFrame {
     private javax.swing.JLabel Lb_resultat;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
