@@ -5,10 +5,9 @@ public class metier {
     private int chevalX;
     private int chevalY;
 
-    private Cellule[][] grille;
+    Cellule[][] grille = new Cellule[TAILLE][TAILLE];
 
     public metier() {
-        grille = new Cellule[TAILLE][TAILLE];
 
         for (int i = 0; i < TAILLE; i++) {
             for (int j = 0; j < TAILLE; j++) {
@@ -57,9 +56,7 @@ public class metier {
 /*/
    
     private void initialisation() {
-        grille[2][2].allumer();
-        grille[1][3].allumer();
-        grille[3][1].allumer();
+        grille[0][0].allumer();
     }
 
     public Cellule[][] getGrille() {
