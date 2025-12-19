@@ -173,6 +173,7 @@ public class interface_plateau extends javax.swing.JFrame {
         // TODO add your handling code here:
         Menu_Jeu f = new Menu_Jeu(); 
         f.setVisible(true) ; 
+        this.dispose();
     }//GEN-LAST:event_Bt_menuActionPerformed
 
     /**
