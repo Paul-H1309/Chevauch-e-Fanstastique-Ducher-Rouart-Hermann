@@ -31,6 +31,7 @@ public class JbuttonAmeliore extends JButton {
         super.paintComponent(g);
         if (cellule.aCheval()==true){
             setText("C");
+            setBackground(new java.awt.Color(102, 102, 102));
         }
         else {
         if (cellule.estAllumee()==true) {
