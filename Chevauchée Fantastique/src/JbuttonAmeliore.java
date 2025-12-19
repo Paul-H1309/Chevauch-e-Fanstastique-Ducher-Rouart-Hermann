@@ -13,7 +13,7 @@ import javax.swing.JButton;
 public class JbuttonAmeliore extends JButton {
     int cooX;
     int cooY;
-    
+              
     JbuttonAmeliore(int cooX, int cooY,c) {
         this.cooX=cooX;
         this.cooY=cooY;
