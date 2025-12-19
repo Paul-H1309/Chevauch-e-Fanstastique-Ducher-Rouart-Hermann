@@ -20,20 +20,18 @@ public class interface_plateau extends javax.swing.JFrame {
      * Creates new form interface_plateau
      */
     public interface_plateau() {
-        initComponents();
-        
+        initComponents(); 
         Bt_facile.setBorder(null);
         Bt_moyen.setBorder(null);
         Bt_difficile.setBorder(null);
         jPanel1.setLayout(new java.awt.GridLayout(5,5));
-        for (int i=0; i < 5; i++){
-            for (int j=0;j < 5; j++){
-                Cellule c = new Cellule();
-                JbuttonAmeliore b = new JbuttonAmeliore(i,j,c);
-                jPanel1.add(b);
-              
-            }
+        metier jeu = new metier();
+        for (int i=0; i < 5; i++){ for (int j=0;j < 5; j++){
+            Cellule c = jeu.grille[i][j];
+            JbuttonAmeliore b = new JbuttonAmeliore(i,j,c); 
+            jPanel1.add(b);
         }
+      }
     }
 
     /**
