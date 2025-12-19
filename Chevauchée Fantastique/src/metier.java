@@ -33,7 +33,6 @@ public class metier {
                 grille[i][j] = new Cellule();
             }
         }
-
         initialisation();
     }
 
@@ -77,29 +76,46 @@ public class metier {
             return false;
         }
 
-        
-        grille[chevalX][chevalY].retirerCheval();
+         if (!grille[xDest][yDest].estAllumee()) {
+        return false;
+    }
+    grille[chevalX][chevalY].retirerCheval();
 
-    
-        chevalX = xDest;
-        chevalY = yDest;
+    chevalX = xDest;
+    chevalY = yDest;
+    grille[chevalX][chevalY].placerCheval();
+    grille[chevalX][chevalY].basculerLumiere();
 
-       
-        grille[chevalX][chevalY].placerCheval();
-
-       
-        grille[chevalX][chevalY].basculerLumiere();
-
-        return true;
+    return true;     
     }
 
-    public Cellule[][] getGrille() {
-        return grille;
-    }
 
     public int[][] choisirTourAleatoire() {
         int index = (int)(Math.random() * tours.length);
         return tours[index];
     }
-
+    
+    public boolean estVictoire() {
+    for (int i = 0; i < TAILLE; i++) {
+        for (int j = 0; j < TAILLE; j++) {
+            if (grille[i][j].estAllumee()) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+    public boolean estDefaite() {
+    int[][] coups = {{2,1},{1,2},{-1,2},{-2,1},{-2,-1},{-1,-2},{1,-2},{2,-1}};
+    for (int[] c : coups) {
+        int xDest = chevalX + c[0];
+        int yDest = chevalY + c[1];
+        if (xDest >= 0 && xDest < TAILLE && yDest >= 0 && yDest < TAILLE) {
+            if (grille[xDest][yDest].estAllumee()) {
+                return false; // coup possible
+            }
+        }
+    }
+    return true; // aucun coup possible
+}
 }
