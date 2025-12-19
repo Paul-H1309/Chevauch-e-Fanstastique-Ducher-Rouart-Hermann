@@ -1,4 +1,3 @@
-import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.JButton;
 
@@ -35,12 +34,15 @@ public class JbuttonAmeliore extends JButton {
         }
         else {
         if (cellule.estAllumee()==true) {
-            setText("1");
+            setBackground(new java.awt.Color(255, 255, 102));
         }
         else {
             setText("0");
         }}
         
+            setBackground(new java.awt.Color(102, 102, 102));
+        }
+
     }
     
-}
+

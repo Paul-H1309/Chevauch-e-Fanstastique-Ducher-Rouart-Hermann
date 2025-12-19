@@ -88,6 +88,7 @@ public class Menu_Jeu extends javax.swing.JFrame {
         // TODO add your handling code here:
         interface_plateau f = new interface_plateau(); 
         f.setVisible(true) ; 
+        this.dispose();
     }//GEN-LAST:event_Bt_jouerActionPerformed
 
     private void Bt_quitterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bt_quitterActionPerformed
