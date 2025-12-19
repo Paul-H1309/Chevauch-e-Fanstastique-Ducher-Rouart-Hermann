@@ -37,9 +37,6 @@ public class JbuttonAmeliore extends JButton {
             setBackground(new java.awt.Color(255, 255, 102));
         }
         else {
-            setText("0");
-        }}
-        
             setBackground(new java.awt.Color(102, 102, 102));
         }
 

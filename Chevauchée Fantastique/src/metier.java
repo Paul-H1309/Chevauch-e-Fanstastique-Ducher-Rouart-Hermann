@@ -8,6 +8,7 @@ public class metier {
     private int chevalY;
     Cellule[][] grille = new Cellule[TAILLE][TAILLE];
 
+    // Variantes de Knight's Tour 5x5
     private int[][][] tours = {
         {
             {0,0},{2,1},{4,0},{3,2},{4,4},
@@ -23,24 +24,41 @@ public class metier {
             {2,4},{0,3},{1,1},{3,0},{4,2},
             {3,4},{1,3},{0,2},{2,0},{4,1}
         }
-  
+        
     };
 
+   
     public metier() {
 
+        // Initialiser la grille
         for (int i = 0; i < TAILLE; i++) {
             for (int j = 0; j < TAILLE; j++) {
                 grille[i][j] = new Cellule();
             }
         }
 
+        // Initialisation du plateau avec cases aléatoirement éteintes
         initialisation();
+    }
 
+    private void initialisation() {
 
-        chevalX = (TAILLE%2)+1;
-        chevalY = (TAILLE%2)+1;
-    
         int[][] tour = choisirTourAleatoire();
+
+        for (int i = 0; i < TAILLE; i++) {
+            for (int j = 0; j < TAILLE; j++) {
+                grille[i][j].allumer();
+            }
+        }
+
+
+        int nbEteintes = 5; 
+        for (int k = 0; k < nbEteintes; k++) {
+            int index = (int)(Math.random() * (TAILLE * TAILLE / 2));
+            int x = tour[index][0];
+            int y = tour[index][1];
+            grille[x][y].eteindre();
+        }
 
 
         int lastIndex = tour.length - 1;
@@ -48,53 +66,6 @@ public class metier {
         chevalY = tour[lastIndex][1];
         grille[chevalX][chevalY].placerCheval();
     }
-
-
- 
-    private void initialisation() {
-        for (int i = 0; i < TAILLE; i++) {
-            for (int j = 0; j < TAILLE; j++) {
-                grille[i][j].allumer();
-            }
-        }
-    }
-
-
-    public boolean deplacerCheval(int xDest, int yDest) {
-        if (xDest < 0 || xDest >= TAILLE || yDest < 0 || yDest >= TAILLE) {
-            return false;
-        }
-
-        int dx = Math.abs(xDest - chevalX);
-        int dy = Math.abs(yDest - chevalY);
-
-        if (!((dx == 2 && dy == 1) || (dx == 1 && dy == 2))) {
-            return false;
-        }
-
-        grille[chevalX][chevalY].retirerCheval();
-
-        chevalX = xDest;
-        chevalY = yDest;
-
-        grille[chevalX][chevalY].placerCheval();
-
-       
-        grille[chevalX][chevalY].eteindre();
-
-        return true;
-    }
-
-    public Cellule[][] getGrille() {
-        return grille;
-    }
-
-    public int[][] choisirTourAleatoire() {
-        int index = (int)(Math.random() * tours.length);
-        return tours[index];
-    }
-}
-/*
 
     public boolean deplacerCheval(int xDest, int yDest) {
 
@@ -137,7 +108,40 @@ public class metier {
         return grille;
     }
 }
-=======
 /*/
    
+    public boolean deplacerCheval(int xDest, int yDest) {
+        if (xDest < 0 || xDest >= TAILLE || yDest < 0 || yDest >= TAILLE) {
+            return false;
+        }
 
+        int dx = Math.abs(xDest - chevalX);
+        int dy = Math.abs(yDest - chevalY);
+
+        if (!((dx == 2 && dy == 1) || (dx == 1 && dy == 2))) {
+            return false;
+        }
+
+        grille[chevalX][chevalY].retirerCheval();
+
+        chevalX = xDest;
+        chevalY = yDest;
+
+        grille[chevalX][chevalY].placerCheval();
+
+
+        grille[chevalX][chevalY].eteindre();
+
+        return true;
+    }
+
+    public Cellule[][] getGrille() {
+        return grille;
+    }
+
+    public int[][] choisirTourAleatoire() {
+        int index = (int)(Math.random() * tours.length);
+        return tours[index];
+    }
+}
+/*
