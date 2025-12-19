@@ -14,7 +14,7 @@ public class interface_plateau extends javax.swing.JFrame {
     boolean F=true;
     boolean M=false;
     boolean D=false;
-    int score=0;
+    String score;
     /**
      * Creates new form interface_plateau
      */
@@ -96,7 +96,6 @@ public class interface_plateau extends javax.swing.JFrame {
 
         Lb_resultat.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Lb_resultat.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Lb_resultat.setText("0");
         Lb_resultat.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 51, 255), 3));
         getContentPane().add(Lb_resultat, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 20, 100, 30));
 
@@ -177,7 +176,7 @@ public class interface_plateau extends javax.swing.JFrame {
     private void Bt_recommencerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bt_recommencerActionPerformed
         // TODO add your handling code here:
         
-        score=0;
+        score="";
         Lb_resultat.setText(""+score);
         Bt_difficile.setBorder(null);
         Bt_moyen.setBorder(null);
