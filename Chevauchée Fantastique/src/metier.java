@@ -90,13 +90,33 @@ public class metier {
     return true;     
     }
 
-    public Cellule[][] getGrille() {
-        return grille;
-    }
 
     public int[][] choisirTourAleatoire() {
         int index = (int)(Math.random() * tours.length);
         return tours[index];
     }
-
+    
+    public boolean estVictoire() {
+    for (int i = 0; i < TAILLE; i++) {
+        for (int j = 0; j < TAILLE; j++) {
+            if (grille[i][j].estAllumee()) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+    public boolean estDefaite() {
+    int[][] coups = {{2,1},{1,2},{-1,2},{-2,1},{-2,-1},{-1,-2},{1,-2},{2,-1}};
+    for (int[] c : coups) {
+        int xDest = chevalX + c[0];
+        int yDest = chevalY + c[1];
+        if (xDest >= 0 && xDest < TAILLE && yDest >= 0 && yDest < TAILLE) {
+            if (grille[xDest][yDest].estAllumee()) {
+                return false; // coup possible
+            }
+        }
+    }
+    return true; // aucun coup possible
+}
 }

@@ -32,7 +32,13 @@ public class interface_plateau extends javax.swing.JFrame {
             b.addActionListener(new java.awt.event.ActionListener(){
             public void actionPerformed(java.awt.event.ActionEvent evt){
                 jeu.deplacerCheval(b.cooX,b.cooY);
-                repaint();}
+                repaint();
+            if (jeu.estVictoire()) {
+                Lb_resultat.setText("Victoire !");
+            } 
+            else if (jeu.estDefaite()) {
+                Lb_resultat.setText("Défaite !");
+    }}
                     });
         }
       }
