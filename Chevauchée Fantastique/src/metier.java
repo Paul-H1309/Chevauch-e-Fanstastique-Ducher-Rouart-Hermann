@@ -5,7 +5,7 @@ public class metier {
     private int chevalX;
     private int chevalY;
     Cellule[][] grille = new Cellule[TAILLE][TAILLE];
-
+    
     private int[][][] tours = {
         {
             {0,0},{2,1},{4,0},{3,2},{4,4},
@@ -25,42 +25,69 @@ public class metier {
     };
 
    
-    public metier() {
-
-
+    public metier(int niveau) {
         for (int i = 0; i < TAILLE; i++) {
             for (int j = 0; j < TAILLE; j++) {
                 grille[i][j] = new Cellule();
             }
         }
-        initialisation();
+        initialisation(niveau);
     }
 
-    private void initialisation() {
+private void initialisation(int level) {
 
-        int[][] tour = choisirTourAleatoire();
+    int[][] tour = choisirTourAleatoire();
 
-        for (int i = 0; i < TAILLE; i++) {
-            for (int j = 0; j < TAILLE; j++) {
-                grille[i][j].allumer();
-            }
+   
+    for (int i = 0; i < TAILLE; i++) {
+        for (int j = 0; j < TAILLE; j++) {
+            grille[i][j].allumer();
         }
-
-
-        int nbEteintes = 7; 
-        for (int k = 0; k < nbEteintes; k++) {
-            int index = (int)(Math.random() * (TAILLE * TAILLE / 2));
-            int x = tour[index][0];
-            int y = tour[index][1];
-            grille[x][y].eteindre();
-        }
-
-
-        int lastIndex = tour.length - 1;
-        chevalX = tour[lastIndex][0];
-        chevalY = tour[lastIndex][1];
-        grille[chevalX][chevalY].placerCheval();
     }
+
+    
+    int nbEteintes;
+    switch(level) {
+        case 1: nbEteintes = 20; break;  // Facile
+        case 2: nbEteintes = 14; break;  // Moyen
+        case 3: nbEteintes = 7; break;   // Difficile
+        default: nbEteintes = 14;
+    }
+
+    
+    if (nbEteintes > tour.length) {
+        nbEteintes = tour.length;
+    }
+
+    
+    int[] indices = new int[tour.length];
+    for (int i = 0; i < tour.length; i++) {
+        indices[i] = i;
+    }
+
+   
+    for (int i = tour.length - 1; i > 0; i--) {
+        int j = (int)(Math.random() * (i + 1));
+        int tmp = indices[i];
+        indices[i] = indices[j];
+        indices[j] = tmp;
+    }
+
+    
+    for (int k = 0; k < nbEteintes; k++) {
+        int index = indices[k];
+        int x = tour[index][0];
+        int y = tour[index][1];
+        grille[x][y].eteindre();
+    }
+
+  
+    int lastIndex = tour.length - 1;
+    chevalX = tour[lastIndex][0];
+    chevalY = tour[lastIndex][1];
+    grille[chevalX][chevalY].placerCheval();
+}
+
 
     public boolean deplacerCheval(int xDest, int yDest) {
 
