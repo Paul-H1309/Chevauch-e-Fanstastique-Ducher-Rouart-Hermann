@@ -15,6 +15,7 @@ public class interface_plateau extends javax.swing.JFrame {
     boolean M=false;
     boolean D=false;
     String score;
+    static int niveau=1;
     /**
      * Creates new form interface_plateau
      */
@@ -24,7 +25,7 @@ public class interface_plateau extends javax.swing.JFrame {
         Bt_moyen.setBorder(null);
         Bt_difficile.setBorder(null);
         jPanel1.setLayout(new java.awt.GridLayout(5,5));
-        metier jeu = new metier();
+        metier jeu = new metier(niveau);
         for (int i=0; i < 5; i++){ for (int j=0;j < 5; j++){
             Cellule c = jeu.grille[i][j];
             JbuttonAmeliore b = new JbuttonAmeliore(i,j,c); 
@@ -44,7 +45,8 @@ public class interface_plateau extends javax.swing.JFrame {
       }
       setVisible(true);
     }
- 
+   
+            
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -158,7 +160,7 @@ public class interface_plateau extends javax.swing.JFrame {
 
     private void Bt_moyenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bt_moyenActionPerformed
         // TODO add your handling code here:
-        
+        niveau = 2;
         Bt_moyen.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 0), 3));
         Bt_difficile.setBorder(null);
         Bt_facile.setBorder(null);
@@ -166,7 +168,7 @@ public class interface_plateau extends javax.swing.JFrame {
 
     private void Bt_facileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bt_facileActionPerformed
         // TODO add your handling code here:
-        
+        niveau = 1;
         Bt_facile.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 204, 0), 3));
         Bt_moyen.setBorder(null);
         Bt_difficile.setBorder(null);
@@ -174,7 +176,7 @@ public class interface_plateau extends javax.swing.JFrame {
 
     private void Bt_difficileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bt_difficileActionPerformed
         // TODO add your handling code here:
-        
+        niveau = 3;
         Bt_difficile.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 0, 0), 3));
         Bt_moyen.setBorder(null);
         Bt_facile.setBorder(null);
